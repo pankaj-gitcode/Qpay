@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const dotEnv = require('dotenv/config');
+const { mongoConnect } = require('./db/db');
+
 
 const app = express();
 
@@ -26,4 +28,9 @@ app.get('/', (req,res)=>{
         })
     }
 })
+
+// ----- Listening PORT -----
 app.listen(PORT, (req,res)=>console.log(`Server Listening Port:${PORT} \n http://localhost:${PORT}`));
+
+//------ Invoke MongoDB ------
+mongoConnect();
