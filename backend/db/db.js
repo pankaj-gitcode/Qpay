@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-
+// ----- CONNECT MONGO -----
 const mongoConnect = async ()=>{
     try{
         await mongoose.connect(`${process.env.MONGO_URL}/qpayDB1`)
