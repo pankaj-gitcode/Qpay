@@ -3,17 +3,20 @@ const cors = require('cors');
 const dotEnv = require('dotenv/config');
 const { mongoConnect } = require('./db/db');
 const { userController } = require('./controller/userController');
+const { userRouter } = require('./router/userRouter');
 
 
 const app = express();
 
 const PORT = process.env.PORT || 6000 ;
 
-
+// middleware
 app.use(express.json());
 app.use(cors());
 
 
+// API endpoints
+app.post('/api', userRouter);
 
 app.get('/', (req,res)=>{
     try{
