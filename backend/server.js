@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const dotEnv = require('dotenv/config');
 const { mongoConnect } = require('./db/db');
+const { userController } = require('./controller/userController');
 
 
 const app = express();
@@ -34,3 +35,4 @@ app.listen(PORT, (req,res)=>console.log(`Server Listening Port:${PORT} \n http:/
 
 //------ Invoke MongoDB ------
 mongoConnect();
+userController();
