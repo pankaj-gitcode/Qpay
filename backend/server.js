@@ -18,6 +18,7 @@ app.use(cors());
 // API endpoints
 app.post('/api', userRouter);
 
+// server health check
 app.get('/', (req,res)=>{
     try{
         res.status(200).json({
